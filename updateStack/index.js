@@ -4,7 +4,7 @@ exports.handler = (event, context) => {
 
   console.log(`REQUEST RECEIVED:\n + ${JSON.stringify(event)}`);
 
-  if (event.RequestType == 'Delete') {
+  if (event.RequestType !== 'Create') {
     sendResponse(event, context, 'SUCCESS');
     return;
   }
